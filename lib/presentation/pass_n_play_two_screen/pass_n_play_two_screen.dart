@@ -1,8 +1,9 @@
-import 'controller/pass_n_play_two_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
 import 'package:ludo_king_clone/widgets/custom_outlined_button.dart';
+
+import 'controller/pass_n_play_two_controller.dart';
 
 class PassNPlayTwoScreen extends GetWidget<PassNPlayTwoController> {
   const PassNPlayTwoScreen({Key? key}) : super(key: key);
@@ -222,7 +223,7 @@ class PassNPlayTwoScreen extends GetWidget<PassNPlayTwoController> {
   /// Navigates to the passNPlayGameScreen when the action is triggered.
   onTapPlay() {
     Get.toNamed(
-      AppRoutes.passNPlayGameScreen,
+      AppRoutes.computerGameScreen,
     );
   }
 }

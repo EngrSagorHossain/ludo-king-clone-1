@@ -1,4 +1,3 @@
-import 'controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/core/utils/validation_functions.dart';
@@ -6,6 +5,8 @@ import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
 import 'package:ludo_king_clone/widgets/custom_outlined_button.dart';
 import 'package:ludo_king_clone/widgets/custom_pin_code_text_field.dart';
 import 'package:ludo_king_clone/widgets/custom_text_form_field.dart';
+
+import 'controller/profile_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class ProfileScreen extends GetWidget<ProfileController> {
@@ -634,6 +635,7 @@ class ProfileScreen extends GetWidget<ProfileController> {
         right: 3.h,
       ),
       child: CustomTextFormField(
+        autofocus: false,
         controller: controller.nameEditTextController,
         hintText: "lbl_tournament_wins".tr,
         validator: (value) {

@@ -1,7 +1,8 @@
-import 'controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
+
+import 'controller/home_controller.dart';
 
 class HomeScreen extends GetWidget<HomeController> {
   const HomeScreen({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                       onTapGamingConsoleOne1();
                                     }))
                           ])),
-                  SizedBox(height: 41.v),
+                  SizedBox(height: 31.v),
                   Padding(
                       padding: EdgeInsets.only(left: 42.h, right: 38.h),
                       child: Row(
@@ -187,7 +188,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                           SizedBox(height: 4.v)
                                         ])))
                           ])),
-                  SizedBox(height: 25.v),
+                  SizedBox(height: 18.v),
                   Padding(
                       padding: EdgeInsets.only(left: 42.h, right: 38.h),
                       child: Row(
@@ -349,7 +350,7 @@ class HomeScreen extends GetWidget<HomeController> {
                                     width: 55.h,
                                     alignment: Alignment.topCenter))
                           ])),
-                  SizedBox(height: 31.v),
+                  SizedBox(height: 21.v),
                   SizedBox(
                       height: 72.v,
                       width: 157.h,

@@ -1,4 +1,3 @@
-import 'controller/registration_submit_two_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/core/utils/validation_functions.dart';
@@ -7,6 +6,8 @@ import 'package:ludo_king_clone/widgets/app_bar/appbar_title.dart';
 import 'package:ludo_king_clone/widgets/app_bar/custom_app_bar.dart';
 import 'package:ludo_king_clone/widgets/custom_elevated_button.dart';
 import 'package:ludo_king_clone/widgets/custom_text_form_field.dart';
+
+import 'controller/registration_submit_two_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class RegistrationSubmitTwoScreen
@@ -23,27 +24,24 @@ class RegistrationSubmitTwoScreen
             appBar: _buildAppBar(),
             body: SizedBox(
                 width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom),
-                    child: Form(
-                        key: _formKey,
-                        child: Container(
-                            width: double.maxFinite,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 17.h, vertical: 25.v),
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  _buildUsername(),
-                                  SizedBox(height: 23.v),
-                                  _buildPassword(),
-                                  SizedBox(height: 23.v),
-                                  _buildConfirmPassword(),
-                                  Spacer(),
-                                  SizedBox(height: 9.v),
-                                  _buildSubmitButton()
-                                ])))))));
+                child: Form(
+                    key: _formKey,
+                    child: Container(
+                        width: double.maxFinite,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 17.h, vertical: 25.v),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              _buildUsername(),
+                              SizedBox(height: 23.v),
+                              _buildPassword(),
+                              SizedBox(height: 23.v),
+                              _buildConfirmPassword(),
+                              Spacer(),
+                              SizedBox(height: 9.v),
+                              _buildSubmitButton()
+                            ]))))));
   }
 
   /// Section Widget

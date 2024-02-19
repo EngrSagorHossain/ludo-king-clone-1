@@ -1,4 +1,3 @@
-import 'controller/registration_submit_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/core/utils/validation_functions.dart';
@@ -8,6 +7,8 @@ import 'package:ludo_king_clone/widgets/app_bar/custom_app_bar.dart';
 import 'package:ludo_king_clone/widgets/custom_elevated_button.dart';
 import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
 import 'package:ludo_king_clone/widgets/custom_text_form_field.dart';
+
+import 'controller/registration_submit_controller.dart';
 
 // ignore_for_file: must_be_immutable
 class RegistrationSubmitScreen extends GetWidget<RegistrationSubmitController> {
@@ -23,35 +24,32 @@ class RegistrationSubmitScreen extends GetWidget<RegistrationSubmitController> {
             appBar: _buildAppBar(),
             body: SizedBox(
                 width: SizeUtils.width,
-                child: SingleChildScrollView(
-                    padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom),
-                    child: Form(
-                        key: _formKey,
-                        child: Container(
-                            width: double.maxFinite,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 18.h, vertical: 7.v),
-                            child: Column(children: [
-                              CustomIconButton(
-                                  height: 70.adaptSize,
-                                  width: 70.adaptSize,
-                                  padding: EdgeInsets.all(25.h),
-                                  decoration: IconButtonStyleHelper.fillGray,
-                                  child: CustomImageView(
-                                      imagePath: ImageConstant.imgGroup62)),
-                              SizedBox(height: 31.v),
-                              _buildNameEditText(),
-                              SizedBox(height: 23.v),
-                              _buildAddressEditText(),
-                              SizedBox(height: 24.v),
-                              _buildPhoneNumberEditText(),
-                              SizedBox(height: 22.v),
-                              _buildTransactionIdEditText(),
-                              Spacer(),
-                              SizedBox(height: 27.v),
-                              _buildNextButton()
-                            ])))))));
+                child: Form(
+                    key: _formKey,
+                    child: Container(
+                        width: double.maxFinite,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 18.h, vertical: 7.v),
+                        child: Column(children: [
+                          CustomIconButton(
+                              height: 70.adaptSize,
+                              width: 70.adaptSize,
+                              padding: EdgeInsets.all(25.h),
+                              decoration: IconButtonStyleHelper.fillGray,
+                              child: CustomImageView(
+                                  imagePath: ImageConstant.imgGroup62)),
+                          SizedBox(height: 31.v),
+                          _buildNameEditText(),
+                          SizedBox(height: 23.v),
+                          _buildAddressEditText(),
+                          SizedBox(height: 24.v),
+                          _buildPhoneNumberEditText(),
+                          SizedBox(height: 22.v),
+                          _buildTransactionIdEditText(),
+                          Spacer(),
+                          SizedBox(height: 27.v),
+                          _buildNextButton()
+                        ]))))));
   }
 
   /// Section Widget

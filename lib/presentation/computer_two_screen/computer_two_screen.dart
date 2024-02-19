@@ -1,9 +1,10 @@
-import 'controller/computer_two_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
 import 'package:ludo_king_clone/widgets/custom_outlined_button.dart';
 import 'package:ludo_king_clone/widgets/custom_radio_button.dart';
+
+import 'controller/computer_two_controller.dart';
 
 class ComputerTwoScreen extends GetWidget<ComputerTwoController> {
   const ComputerTwoScreen({Key? key}) : super(key: key);
@@ -185,7 +186,7 @@ class ComputerTwoScreen extends GetWidget<ComputerTwoController> {
   /// Navigates to the homeScreen when the action is triggered.
   onTapPlay() {
     Get.toNamed(
-      AppRoutes.homeScreen,
+      AppRoutes.computerGameScreen,
     );
   }
 }

@@ -1,7 +1,9 @@
-import 'controller/tournament_game_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
+
+import '../../widgets/custom_outlined_button.dart';
+import 'controller/tournament_game_controller.dart';
 
 class TournamentGameScreen extends GetWidget<TournamentGameController> {
   const TournamentGameScreen({Key? key}) : super(key: key);
@@ -23,7 +25,113 @@ class TournamentGameScreen extends GetWidget<TournamentGameController> {
                               width: 32.h,
                               padding: EdgeInsets.all(4.h),
                               onTap: () {
-                                onTapBtnIconButton();
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      contentPadding: EdgeInsets.zero,
+                                      content: Container(
+                                        decoration:
+                                            AppDecoration.outlinePrimary,
+                                        child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      left: 70.h),
+                                                  child: Text(
+                                                      "lbl_quit_game".tr,
+                                                      style: theme.textTheme
+                                                          .headlineSmall)),
+                                              SizedBox(height: 67.v),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 5.h),
+                                                  child: Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        CustomOutlinedButton(
+                                                            onPressed: () {
+                                                              Get.offAllNamed(
+                                                                  AppRoutes
+                                                                      .homeScreen);
+                                                            },
+                                                            height: 28.v,
+                                                            width: 55.h,
+                                                            text: "lbl_yes".tr,
+                                                            buttonTextStyle: theme
+                                                                .textTheme
+                                                                .titleSmall!),
+                                                        Container(
+                                                            height: 28.v,
+                                                            width: 34.h,
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        7.h,
+                                                                    vertical:
+                                                                        2.v),
+                                                            decoration: AppDecoration
+                                                                .outlinePrimary11
+                                                                .copyWith(
+                                                                    borderRadius:
+                                                                        BorderRadiusStyle
+                                                                            .roundedBorder3),
+                                                            child: CustomImageView(
+                                                                imagePath:
+                                                                    ImageConstant
+                                                                        .imgVolume2,
+                                                                height: 17.v,
+                                                                width: 15.h,
+                                                                alignment: Alignment
+                                                                    .bottomRight)),
+                                                        Container(
+                                                            height: 28.v,
+                                                            width: 34.h,
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        7.h,
+                                                                    vertical:
+                                                                        4.v),
+                                                            decoration: AppDecoration
+                                                                .outlinePrimary11
+                                                                .copyWith(
+                                                                    borderRadius:
+                                                                        BorderRadiusStyle
+                                                                            .roundedBorder3),
+                                                            child: CustomImageView(
+                                                                imagePath:
+                                                                    ImageConstant
+                                                                        .imgMusicalNoteSymbol,
+                                                                height: 15
+                                                                    .adaptSize,
+                                                                width: 15
+                                                                    .adaptSize,
+                                                                alignment:
+                                                                    Alignment
+                                                                        .topLeft)),
+                                                        CustomOutlinedButton(
+                                                            height: 28.v,
+                                                            width: 55.h,
+                                                            text: "lbl_no".tr,
+                                                            buttonTextStyle:
+                                                                theme.textTheme
+                                                                    .titleSmall!,
+                                                            onPressed: () {
+                                                              Get.back();
+                                                            })
+                                                      ])),
+                                              SizedBox(height: 28.v)
+                                            ]),
+                                      ),
+                                    );
+                                  },
+                                );
                               },
                               child: CustomImageView(
                                   imagePath: ImageConstant.imgGroup11))),
@@ -106,6 +214,72 @@ class TournamentGameScreen extends GetWidget<TournamentGameController> {
   }
 
   /// Section Widget
+  Widget _buildExitOneColumn() {
+    return Align(
+        alignment: Alignment.topCenter,
+        child: Container(
+            decoration: AppDecoration.outlinePrimary,
+            child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                      padding: EdgeInsets.only(left: 70.h),
+                      child: Text("lbl_quit_game".tr,
+                          style: theme.textTheme.headlineSmall)),
+                  SizedBox(height: 67.v),
+                  Padding(
+                      padding: EdgeInsets.only(right: 5.h),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomOutlinedButton(
+                                height: 28.v,
+                                width: 55.h,
+                                text: "lbl_yes".tr,
+                                buttonTextStyle: theme.textTheme.titleSmall!),
+                            Container(
+                                height: 28.v,
+                                width: 34.h,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 7.h, vertical: 2.v),
+                                decoration: AppDecoration.outlinePrimary11
+                                    .copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.roundedBorder3),
+                                child: CustomImageView(
+                                    imagePath: ImageConstant.imgVolume2,
+                                    height: 17.v,
+                                    width: 15.h,
+                                    alignment: Alignment.bottomRight)),
+                            Container(
+                                height: 28.v,
+                                width: 34.h,
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 7.h, vertical: 4.v),
+                                decoration: AppDecoration.outlinePrimary11
+                                    .copyWith(
+                                        borderRadius:
+                                            BorderRadiusStyle.roundedBorder3),
+                                child: CustomImageView(
+                                    imagePath:
+                                        ImageConstant.imgMusicalNoteSymbol,
+                                    height: 15.adaptSize,
+                                    width: 15.adaptSize,
+                                    alignment: Alignment.topLeft)),
+                            CustomOutlinedButton(
+                                height: 28.v,
+                                width: 55.h,
+                                text: "lbl_no".tr,
+                                buttonTextStyle: theme.textTheme.titleSmall!,
+                                onPressed: () {
+                                  // onTapNo();
+                                })
+                          ])),
+                  SizedBox(height: 28.v)
+                ])));
+  }
+
   Widget _buildViewSection() {
     return Align(
         alignment: Alignment.center,

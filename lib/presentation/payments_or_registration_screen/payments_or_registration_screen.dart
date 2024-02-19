@@ -1,8 +1,9 @@
-import 'controller/payments_or_registration_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:ludo_king_clone/core/app_export.dart';
 import 'package:ludo_king_clone/widgets/custom_elevated_button.dart';
 import 'package:ludo_king_clone/widgets/custom_icon_button.dart';
+
+import 'controller/payments_or_registration_controller.dart';
 
 class PaymentsOrRegistrationScreen
     extends GetWidget<PaymentsOrRegistrationController> {
@@ -23,6 +24,7 @@ class PaymentsOrRegistrationScreen
                       _buildPaymentOrRegistrationSection(),
                       SizedBox(height: 36.v),
                       CustomIconButton(
+                          onTap: () => Get.back(),
                           height: 28.v,
                           width: 32.h,
                           padding: EdgeInsets.all(4.h),
